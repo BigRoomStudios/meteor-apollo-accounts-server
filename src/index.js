@@ -4,7 +4,6 @@ import SchemaMutations from './Mutations'
 import Mutation from './Mutation'
 import LoginMethodResponse from './LoginMethodResponse'
 import callMethod from './callMethod'
-import {loadSchema} from 'graphql-loader'
 
 const initAccounts = function (givenOptions) {
   const defaultOptions = {
@@ -22,7 +21,7 @@ const initAccounts = function (givenOptions) {
   const typeDefs = [SchemaTypes(options), ...SchemaMutations(options)]
   const resolvers = {...Mutation(options), ...LoginMethodResponse(options)}
 
-  loadSchema({typeDefs, resolvers})
+  return {typeDefs, resolvers}
 }
 
 export {
