@@ -18,5 +18,7 @@ export default function (passedContext, name, ...args) {
     ...passedContext
   }
 
+  console.log('handler.call(context, ...args)', handler.call(context, ...args));
+
   return handler.call(context, ...args)
 }

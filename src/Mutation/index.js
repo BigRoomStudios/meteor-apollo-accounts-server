@@ -18,7 +18,7 @@ export default function (options) {
     ...oauth(options)
   }
 
-if (hasService('password')) {
+if (hasService(options, 'password')) {
   resolvers.loginWithPassword = loginWithPassword
   resolvers.loginWithToken = loginWithToken
   resolvers.changePassword = changePassword
