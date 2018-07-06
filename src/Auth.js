@@ -21,7 +21,7 @@ type SuccessResponse {
   success: Boolean
 }
 
-# A hashsed password
+# A hashed password
 input HashedPassword {
   # The hashed password
   digest: String!
