@@ -11,10 +11,9 @@ export default function (passedContext, name, ...args) {
   const context = {
     connection,
     setUserId (userId) {
-
-      if (userId) {
-        this.userId = userId;
-      }
+      /**
+       * This will not make any changes if you don\'t pass setUserId function in context
+       */
     },
     ...passedContext
   }
