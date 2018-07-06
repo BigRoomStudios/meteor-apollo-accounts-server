@@ -11,14 +11,13 @@ export default function (passedContext, name, ...args) {
   const context = {
     connection,
     setUserId (userId) {
-      /**
-       * This will not make any changes if you don\'t pass setUserId function in context
-       */
+
+      if (userId) {
+        this.userId = userId;
+      }
     },
     ...passedContext
   }
-
-  console.log('handler.call(context, ...args)', handler.call(context, ...args));
 
   return handler.call(context, ...args)
 }
